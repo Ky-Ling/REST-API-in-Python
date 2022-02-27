@@ -1,0 +1,4 @@
+1: pip3 install pipenv
+2: pipenv shell
+    --> It will create a pip file which holds all of our dependencies, all of the packages that we install 
+3: pipenv install flask-sqlalchemy flask-marshmallow marshmallow-sqlalchemy

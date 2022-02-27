@@ -1,0 +1,4 @@
+1: REST: REpresentational State Transfer
+2: API: Application Programming Interface
+3: REST API: is a way for other programs or applications to manipulate or query or update or delete, or
+    whatever it may be information. It is a way to deal with some kind of data in a structured format 
