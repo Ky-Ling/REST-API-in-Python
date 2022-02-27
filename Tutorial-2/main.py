@@ -1,7 +1,7 @@
 '''
 Date: 2022-02-27 13:29:25
 LastEditors: GC
-LastEditTime: 2022-02-27 22:14:39
+LastEditTime: 2022-02-27 22:37:42
 FilePath: \REST API\Tutorial-2\main.py
 '''
 from flask import Flask
@@ -16,7 +16,6 @@ api = Api(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 
 db = SQLAlchemy(app)
-db.create_all()
 
 class VideoModel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -27,6 +26,7 @@ class VideoModel(db.Model):
     def __repr__(self) -> str:
         return f"Video(name = {self.name}, views = {self.views}, likes = {self.likes}"
         
+db.create_all()
 
 # Make a new request parser object, it will automatically parse through the request that's being sent and make sure that it
 #   fits the kind of guildlines that we are about to define here.
@@ -110,11 +110,6 @@ class Video(Resource):
 
 # Register the class as a resource
 api.add_resource(Video, "/video/<int:video_id>")
-
-
-
-
-        
 
 
 if __name__ == "__main__":
